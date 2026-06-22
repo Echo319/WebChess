@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Piece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/PieceType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/messages/MoveMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/move/Coords.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/move/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/thread/GameThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/utils/NotationParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/test/java/NotationParserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/test/resources/move.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TerminalClient/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="25" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="3FS8MoLtuatTQznvmEkiIWeDysi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.NotationParserTest.Castle.executor": "Run",
+    "JUnit.NotationParserTest.complexFileAndRankMove.executor": "Debug",
+    "JUnit.NotationParserTest.executor": "Run",
+    "JUnit.NotationParserTest.knightMove.executor": "Debug",
+    "JUnit.NotationParserTest.pawnMove.executor": "Run",
+    "JUnit.NotationParserTest.regExTest.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.NotationParserTest">
+    <configuration name="NotationParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChessServer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotationParserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotationParserTest.Castle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChessServer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotationParserTest" />
+      <option name="METHOD_NAME" value="Castle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotationParserTest.complexFileAndRankMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChessServer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotationParserTest" />
+      <option name="METHOD_NAME" value="complexFileAndRankMove" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotationParserTest.knightMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChessServer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotationParserTest" />
+      <option name="METHOD_NAME" value="knightMove" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotationParserTest.regExTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChessServer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotationParserTest" />
+      <option name="METHOD_NAME" value="regExTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.NotationParserTest" />
+        <item itemvalue="JUnit.NotationParserTest.regExTest" />
+        <item itemvalue="JUnit.NotationParserTest.knightMove" />
+        <item itemvalue="JUnit.NotationParserTest.complexFileAndRankMove" />
+        <item itemvalue="JUnit.NotationParserTest.Castle" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="" />
+      <created>1782057065011</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1782057065011</updated>
+    </task>
+    <servers />
+  </component>
+</project>
