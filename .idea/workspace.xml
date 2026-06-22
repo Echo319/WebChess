@@ -4,27 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Piece.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/PieceType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/messages/MoveMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/move/Coords.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/move/Move.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/thread/GameThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/utils/NotationParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/test/java/NotationParserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/test/resources/move.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TerminalClient/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="Basic project structure and implemented an Algebraic Notation parser.">
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/test/java/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Piece.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +19,28 @@
   <component name="EmbeddingIndexingInfo">
     <option name="cachedIndexableFilesCount" value="25" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Echo319"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Echo319/WebChess.git",
+    "accountId": "2e4a4f4d-09f6-45f6-b054-abbf11eabc77"
+  }
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -52,6 +56,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.GameTest.initGameTest.executor": "Run",
     "JUnit.NotationParserTest.Castle.executor": "Run",
     "JUnit.NotationParserTest.complexFileAndRankMove.executor": "Debug",
     "JUnit.NotationParserTest.executor": "Run",
@@ -66,22 +71,22 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.NotationParserTest">
+  <component name="RunManager" selected="JUnit.GameTest.initGameTest">
+    <configuration name="GameTest.initGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChessServer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GameTest" />
+      <option name="METHOD_NAME" value="initGameTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NotationParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ChessServer" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="NotationParserTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NotationParserTest.Castle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ChessServer" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotationParserTest" />
-      <option name="METHOD_NAME" value="Castle" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -118,11 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GameTest.initGameTest" />
         <item itemvalue="JUnit.NotationParserTest" />
         <item itemvalue="JUnit.NotationParserTest.regExTest" />
         <item itemvalue="JUnit.NotationParserTest.knightMove" />
         <item itemvalue="JUnit.NotationParserTest.complexFileAndRankMove" />
-        <item itemvalue="JUnit.NotationParserTest.Castle" />
       </list>
     </recent_temporary>
   </component>
@@ -141,6 +146,28 @@
       <option name="presentableId" value="Default" />
       <updated>1782057065011</updated>
     </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1782113815714</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1782113815714</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Basic project structure and implemented an Algebraic Notation parser.">
+      <option name="closed" value="true" />
+      <created>1782114020541</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1782114020541</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <MESSAGE value="Basic project structure and implemented an Algebraic Notation parser." />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic project structure and implemented an Algebraic Notation parser." />
   </component>
 </project>

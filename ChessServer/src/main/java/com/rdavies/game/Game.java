@@ -5,48 +5,52 @@ import java.util.List;
 
 public class Game {
 
-    List<Piece> pieces = new ArrayList<>();
+    //List<Piece> pieces = new ArrayList<>();
+
+    public Piece[][] board = new Piece[8][8];
 
     public Game() {
-        this.pieces = initGame();
+        //this.pieces = initGame();
+        board = initGame();
     }
 
-    private List<Piece> initGame() {
+    private Piece[][] initGame() {
+        Piece[][] board = new Piece[8][8];
         // Gen 16 pawns 8 for white 8 for black
-        for(int i = 0; i < 8; i++) {
-                pieces.add(new Piece(Player.WHITE, PieceType.PAWN, (char) ('a' + i), 2));
+        for(int i = 0; i < board.length; i++) {
+                board[1][i] = new Piece(Player.WHITE, PieceType.PAWN);
         }
-        for(int j = 0; j < 8; j++) {
-                pieces.add(new Piece(Player.BLACK, PieceType.PAWN, (char) ('a' + j), 7));
+        for(int j = 0; j < board.length; j++) {
+                board[6][j] = new Piece(Player.BLACK, PieceType.PAWN);
         }
 
         // ROOKs
-        pieces.add(new Piece(Player.WHITE, PieceType.ROOK, 'a', 1));
-        pieces.add(new Piece(Player.WHITE, PieceType.ROOK, 'h', 1));
-        pieces.add(new Piece(Player.BLACK, PieceType.ROOK, 'a', 8));
-        pieces.add(new Piece(Player.BLACK, PieceType.ROOK, 'h', 8));
+        board[0][0] = new Piece(Player.WHITE, PieceType.ROOK);
+        board[0][7] = new Piece(Player.WHITE, PieceType.ROOK);
+        board[7][0] = new Piece(Player.BLACK, PieceType.ROOK);
+        board[7][7] = new Piece(Player.BLACK, PieceType.ROOK);
 
         // KNIGHTS
-        pieces.add(new Piece(Player.WHITE, PieceType.KNIGHT, 'b', 1));
-        pieces.add(new Piece(Player.WHITE, PieceType.KNIGHT, 'g', 1));
-        pieces.add(new Piece(Player.BLACK, PieceType.KNIGHT, 'b', 8));
-        pieces.add(new Piece(Player.BLACK, PieceType.KNIGHT, 'g', 8));
+        board[0][1] = new Piece(Player.WHITE, PieceType.KNIGHT);
+        board[0][6] = new Piece(Player.WHITE, PieceType.KNIGHT);
+        board[7][1] = new Piece(Player.BLACK, PieceType.KNIGHT);
+        board[7][6] = new Piece(Player.BLACK, PieceType.KNIGHT);
 
         // BISHOPs
-        pieces.add(new Piece(Player.WHITE, PieceType.BISHOP, 'c', 1));
-        pieces.add(new Piece(Player.WHITE, PieceType.BISHOP, 'f', 1));
-        pieces.add(new Piece(Player.BLACK, PieceType.BISHOP, 'c', 8));
-        pieces.add(new Piece(Player.BLACK, PieceType.BISHOP, 'f', 8));
+        board[0][2] = new Piece(Player.WHITE, PieceType.BISHOP);
+        board[0][5] = new Piece(Player.WHITE, PieceType.BISHOP);
+        board[7][2] = new Piece(Player.BLACK, PieceType.BISHOP);
+        board[7][5] = new Piece(Player.BLACK, PieceType.BISHOP);
 
         // QUEENs
-        pieces.add(new Piece(Player.WHITE, PieceType.QUEEN, 'd', 1));
-        pieces.add(new Piece(Player.BLACK, PieceType.QUEEN, 'd', 8));
+        board[0][3] = new Piece(Player.WHITE, PieceType.QUEEN);
+        board[7][3] = new Piece(Player.BLACK, PieceType.QUEEN);
 
         // KINGs
-        pieces.add(new Piece(Player.WHITE, PieceType.KING, 'e', 1));
-        pieces.add(new Piece(Player.BLACK, PieceType.KING, 'e', 8));
+        board[0][4] = new Piece(Player.WHITE, PieceType.KING);
+        board[7][4] = new Piece(Player.BLACK, PieceType.KING);
 
-        return pieces;
+        return board;
     }
 
 

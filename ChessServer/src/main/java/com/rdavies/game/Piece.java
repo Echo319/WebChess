@@ -4,17 +4,26 @@ public class Piece {
 
     Player player; // WHITE or BLACK
     PieceType type;
-    char x;
-    int y;
     boolean isAlive;
     boolean isPromoted;
+    boolean hasMoved;
 
-    public Piece(Player player, PieceType type, char x, int y) {
+    public Piece(Player player, PieceType type) {
         this.player = player;
         this.type = type;
-        this.x = x;
-        this.y = y;
         isAlive = true;
         isPromoted = false;
+        hasMoved = false;
+    }
+
+    @Override
+    public String toString() {
+        return "Piece{" +
+                "player=" + player +
+                ", type=" + type +
+                ", isAlive=" + isAlive +
+                ", isPromoted=" + isPromoted +
+                ", hasMoved=" + hasMoved +
+                '}';
     }
 }
