@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="Basic project structure and implemented an Algebraic Notation parser.">
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/test/java/GameTest.java" afterDir="false" />
+    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="Changed board representation to 2D array. &#10;&#10;I expect this to be easier to walk and validate moves.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/move/Coords.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/move/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/move/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/utils/NotationParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/utils/NotationParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/test/java/NotationParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/test/java/NotationParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +47,9 @@
     <commands />
     <urls />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
   "associatedIndex": 1
@@ -61,6 +66,7 @@
     "JUnit.NotationParserTest.complexFileAndRankMove.executor": "Debug",
     "JUnit.NotationParserTest.executor": "Run",
     "JUnit.NotationParserTest.knightMove.executor": "Debug",
+    "JUnit.NotationParserTest.notationToCoords.executor": "Run",
     "JUnit.NotationParserTest.pawnMove.executor": "Run",
     "JUnit.NotationParserTest.regExTest.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -71,7 +77,7 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.GameTest.initGameTest">
+  <component name="RunManager" selected="JUnit.NotationParserTest.notationToCoords">
     <configuration name="GameTest.initGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ChessServer" />
       <option name="PACKAGE_NAME" value="" />
@@ -91,21 +97,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotationParserTest.complexFileAndRankMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ChessServer" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotationParserTest" />
-      <option name="METHOD_NAME" value="complexFileAndRankMove" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="NotationParserTest.knightMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ChessServer" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="NotationParserTest" />
       <option name="METHOD_NAME" value="knightMove" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotationParserTest.notationToCoords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChessServer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotationParserTest" />
+      <option name="METHOD_NAME" value="notationToCoords" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.NotationParserTest.notationToCoords" />
         <item itemvalue="JUnit.GameTest.initGameTest" />
         <item itemvalue="JUnit.NotationParserTest" />
         <item itemvalue="JUnit.NotationParserTest.regExTest" />
         <item itemvalue="JUnit.NotationParserTest.knightMove" />
-        <item itemvalue="JUnit.NotationParserTest.complexFileAndRankMove" />
       </list>
     </recent_temporary>
   </component>
@@ -162,12 +168,21 @@
       <option name="project" value="LOCAL" />
       <updated>1782114020541</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Changed board representation to 2D array. &#10;&#10;I expect this to be easier to walk and validate moves.">
+      <option name="closed" value="true" />
+      <created>1782115526282</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1782115526282</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="Basic project structure and implemented an Algebraic Notation parser." />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic project structure and implemented an Algebraic Notation parser." />
+    <MESSAGE value="Changed board representation to 2D array. &#10;&#10;I expect this to be easier to walk and validate moves." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed board representation to 2D array. &#10;&#10;I expect this to be easier to walk and validate moves." />
   </component>
 </project>

@@ -1,7 +1,6 @@
 import com.rdavies.game.PieceType;
 import com.rdavies.move.Move;
 import com.rdavies.utils.NotationParser;
-import org.junit.After;
 import org.junit.Test;
 
 import java.util.regex.Pattern;
@@ -23,6 +22,18 @@ public class NotationParserTest {
       ABCDEFGH
       01234567
  */
+
+    @Test
+    public void notationToCoords() {
+        String s = "e4";
+
+        int x = s.charAt(0) - 'a';
+        int y = Character.getNumericValue(s.charAt(1)) - 1;
+
+
+        assertEquals(4, x);
+        assertEquals(3, y);
+    }
 
     @Test
     public void regExTest() {

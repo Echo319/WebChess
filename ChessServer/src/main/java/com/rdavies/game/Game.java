@@ -1,8 +1,5 @@
 package com.rdavies.game;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Game {
 
     //List<Piece> pieces = new ArrayList<>();

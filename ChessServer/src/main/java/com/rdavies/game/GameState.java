@@ -3,7 +3,6 @@ package com.rdavies.game;
 import com.rdavies.move.Move;
 import com.rdavies.utils.NotationParser;
 
-import java.util.Arrays;
 
 public class GameState {
         // new
