@@ -15,28 +15,24 @@ public class NotationParser {
         Move move = new Move();
 
         // check +
-        boolean isCheck = false;
         if(notation.contains("+")) {
             notation = notation.replace("+", "");
             move.isCheck = true;
         }
 
         // checkmate #
-        boolean isCheckmate = false;
         if(notation.contains("#")) {
             notation = notation.replace("#", "");
             move.isCheckmate = true;
         }
 
         // capture x
-        boolean isCapture = false;
         if(notation.contains("x")) {
             notation = notation.replace("x", "");
             move.isCapture = true;
         }
 
         // Promotion =
-        boolean isPromotion = false;
         PieceType promotion;
         if(notation.contains("=")) {
             notation = notation.replace("=", "");
@@ -46,8 +42,6 @@ public class NotationParser {
         }
 
         // castle O-O || O-O-O
-        boolean isKingCastle;
-        boolean isQueenCastle;
         if(notation.equals("O-O")) {
             move.pieceType = PieceType.KING;
             move.isKingCastle = true;
@@ -63,18 +57,17 @@ public class NotationParser {
         if(notation.length() == 2) {
             move.pieceType = PieceType.PAWN;
             char[] chars = notation.toCharArray();
-            move.toFile = chars[0];
-            move.toRank = Character.getNumericValue(chars[1]);
+            move.toFile = fileToX(chars[0]);
+            move.toRank = rankToY(chars[1]);
             return move;
         }
 
-        char startingFile;
         //Pawn capture ex: ed5
         if(fileRegEx.matcher(notation).find()) {
             move.pieceType = PieceType.PAWN;
-            move.fromFile = notation.charAt(0);
-            move.toFile = notation.charAt(1);
-            move.toRank = Character.getNumericValue(notation.charAt(2));
+            move.fromFile = fileToX(notation.charAt(0));
+            move.toFile = fileToX(notation.charAt(1));
+            move.toRank = rankToY(notation.charAt(2));
             return move;
         }
 
@@ -83,8 +76,8 @@ public class NotationParser {
             move.pieceType = PieceType.charToPiece(notation.charAt(0));
             // normal move eg : Ne4 knight to e4
             if(notation.length() == 3) {
-                move.toFile = notation.charAt(1);
-                move.toRank = Character.getNumericValue(notation.charAt(2));
+                move.toFile = fileToX(notation.charAt(1));
+                move.toRank = rankToY(notation.charAt(2));
                 return move;
             }
 
@@ -123,27 +116,41 @@ public class NotationParser {
 
 
 
+    // Helper to get x, y coords from complex moves where one character is used in notation e.g Rce8 "rook on file c moved to e8"
     private RankAndFile parsePlace(String position) {
         char[] chars = position.toCharArray();
         if(position.length() == 2) {
-            return new RankAndFile(chars[0], Character.getNumericValue(chars[1]));
+            return new RankAndFile(fileToX(chars[0]), rankToY(chars[1]));
         }
         if(fileRegEx.matcher(position).find()) {
-            return new RankAndFile(chars[0], null);
+            return new RankAndFile(fileToX(chars[0]), null);
         }
         if(position.matches("[1-8]")) {
-            return new RankAndFile(null, Character.getNumericValue(chars[0]));
+            return new RankAndFile(null, rankToY(chars[0]));
         }
         return null;
     }
 
     public static class RankAndFile {
-        Character file;
+        Integer file;
         Integer rank;
-        RankAndFile(Character file, Integer rank) {
+
+        // eg.. e4 == 4, 3
+        RankAndFile(Integer file, Integer rank) {
             this.file = file;
             this.rank = rank;
         }
     }
+
+    // Helpers to convert characters into board coordinates
+    private int fileToX(char file) {
+        return file - 'a';
+    }
+
+    private int rankToY(char rank) {
+        return Character.getNumericValue(rank) - 1;
+    }
+
+
 
 }

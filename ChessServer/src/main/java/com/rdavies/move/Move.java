@@ -2,14 +2,12 @@ package com.rdavies.move;
 
 import com.rdavies.game.PieceType;
 
-import java.util.Objects;
-
 public class Move {
 
     public PieceType pieceType = null;
-    public char fromFile = 'z'; // col
+    public int fromFile = -1; // col
     public int fromRank = -1; // row
-    public char toFile = 'z'; // col
+    public int toFile = -1; // col
     public int toRank = -1; // row
     public boolean isCheck = false;
     public boolean isCheckmate = false;
