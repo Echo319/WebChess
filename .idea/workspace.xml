@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="Converted literal rank and file into X Y coordinates.">
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/exceptions/NoPieceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/test/java/GameStateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/test/resources/anGame.txt" afterDir="false" />
+    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="Added pawn move validation and game update">
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/configuration/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/controllers/WebSocketController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/messages/MoveResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/messages/MoveMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/messages/MoveMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChessServer/src/test/java/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/test/java/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +23,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="28" />
+    <option name="cachedIndexableFilesCount" value="29" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,25 +63,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.GameTest.initGameTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NotationParserTest.Castle.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NotationParserTest.complexFileAndRankMove.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.NotationParserTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NotationParserTest.knightMove.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.NotationParserTest.notationToCoords.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NotationParserTest.pawnMove.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NotationParserTest.regExTest.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.GameTest.fenStringTest.executor": "Run",
+    "JUnit.GameTest.initGameTest.executor": "Run",
+    "JUnit.NotationParserTest.Castle.executor": "Run",
+    "JUnit.NotationParserTest.complexFileAndRankMove.executor": "Debug",
+    "JUnit.NotationParserTest.executor": "Run",
+    "JUnit.NotationParserTest.knightMove.executor": "Debug",
+    "JUnit.NotationParserTest.notationToCoords.executor": "Run",
+    "JUnit.NotationParserTest.pawnMove.executor": "Run",
+    "JUnit.NotationParserTest.regExTest.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.GameTest.initGameTest">
+}]]></component>
+  <component name="RunManager" selected="JUnit.GameTest.fenStringTest">
+    <configuration name="GameTest.fenStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChessServer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GameTest" />
+      <option name="METHOD_NAME" value="fenStringTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GameTest.initGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ChessServer" />
       <option name="PACKAGE_NAME" value="" />
@@ -95,16 +109,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="NotationParserTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NotationParserTest.knightMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ChessServer" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NotationParserTest" />
-      <option name="METHOD_NAME" value="knightMove" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GameTest.fenStringTest" />
         <item itemvalue="JUnit.GameTest.initGameTest" />
         <item itemvalue="JUnit.NotationParserTest.notationToCoords" />
         <item itemvalue="JUnit.NotationParserTest" />
         <item itemvalue="JUnit.NotationParserTest.regExTest" />
-        <item itemvalue="JUnit.NotationParserTest.knightMove" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782116968471</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added pawn move validation and game update">
+      <option name="closed" value="true" />
+      <created>1783264403045</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1783264403045</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -203,6 +215,7 @@
     <MESSAGE value="Changed board representation to 2D array. &#10;&#10;I expect this to be easier to walk and validate moves." />
     <MESSAGE value="Clean up proj" />
     <MESSAGE value="Converted literal rank and file into X Y coordinates." />
-    <option name="LAST_COMMIT_MESSAGE" value="Converted literal rank and file into X Y coordinates." />
+    <MESSAGE value="Added pawn move validation and game update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added pawn move validation and game update" />
   </component>
 </project>

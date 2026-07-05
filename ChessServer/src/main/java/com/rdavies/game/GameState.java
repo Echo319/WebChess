@@ -1,23 +1,44 @@
 package com.rdavies.game;
 
+import com.rdavies.messages.MoveMessage;
 import com.rdavies.move.Move;
 import com.rdavies.utils.NotationParser;
 
 
 public class GameState {
         // new
-    private Game game = new Game();
-    private NotationParser parser = new NotationParser();
+    private final Game game = new Game();
+    private final NotationParser parser = new NotationParser();
     private Player turnPlayer = Player.WHITE;
 
     public GameState() {
 
     }
 
+    public boolean handleMove(MoveMessage message) {
+        if(turnPlayer != Player.valueOf(message.getPlayer())) {
+            return false;
+        }
+
+        Move recievedMove = parser.parse(message.getMove());
+        Piece pieceToMove = validMove(recievedMove);
+
+        if(pieceToMove == null) {
+            return false;
+        }
+
+        game.update(pieceToMove, recievedMove);
+        turnPlayer = nextPlayer();
+        return true;
+    }
+
+    public String getFenString() {
+        return game.toFenString();
+    }
+
 
     // from the position moved to we then step back to find the piece that moved
-    private boolean validMove(Move move) {
-        boolean isValid = false;
+    private Piece validMove(Move move) {
         Piece pieceToMove = null;
 
         // captured piece exists and is not their own piece
@@ -25,13 +46,12 @@ public class GameState {
             // if capture find the piece that is gonna be captured
             Piece captured = game.getPosition(move.toFile, move.toRank);
             if(captured == null) {
-                return false;
+                return null;
             }
             if(captured.player == turnPlayer) {
-                return false;
+                return null;
             }
         }
-
 
         switch(move.pieceType) {
             case PAWN -> {
@@ -48,16 +68,11 @@ public class GameState {
             case KING -> {
             }
             default -> {
-                return false;
+                return null;
             }
         }
 
-        if(pieceToMove == null) {
-            return false;
-        }
-
-        isValid = game.update(pieceToMove, move);
-        return isValid;
+        return pieceToMove;
     }
 
 
@@ -130,6 +145,14 @@ public class GameState {
             return null;
         }
         throw new RuntimeException("Cannot validate pawn move something is very wrong");
+    }
+
+
+    private Player nextPlayer() {
+        if(this.turnPlayer == Player.WHITE)
+            return Player.BLACK;
+        else
+            return Player.WHITE;
     }
 
 }

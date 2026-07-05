@@ -84,6 +84,40 @@ public class Game {
         return false;
     }
 
+    public String toFenString() {
+        StringBuilder fen = new StringBuilder();
+
+        // We have to go backwards for proper FEN as board is normally seen as 0,0 in the bottom left where as ours is top left
+        for(int rank = 7; rank >= 0; rank-- ) {
+            int emptyCount = 0;
+
+            for(int file = 7; file >= 0; file--) {
+                Piece piece = board[rank][file];
+                PieceType type = board[rank][file].type;
+                if(type == PieceType.NOTHING) {
+                    emptyCount++;
+                } else {
+                    if(emptyCount > 0) {
+                        fen.append(emptyCount);
+                        emptyCount = 0;
+                    }
+                    if(piece.player == Player.BLACK){
+                        fen.append(Character.toLowerCase(type.getChar()));
+                    } else {
+                        fen.append(type.getChar());
+                    }
+                }
+            }
+
+            if(emptyCount > 0) {
+                fen.append(emptyCount);
+            }
+            if(rank > 0 ) { // ensure the last line does not end in a /
+                fen.append("/");
+            }
+        }
+        return fen.toString();
+    }
 
 
 }
