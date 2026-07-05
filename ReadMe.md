@@ -38,8 +38,3 @@ e.g
     board: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR"
 }
 ```
-
-Current unknowns.
-The controller has the gameState I dont think thats correct as the controller is likely handling messages for multiple games
-So we need to distribute the move to the appropriate game.
-Mayhaps we need a Map of GameId to GameState?  

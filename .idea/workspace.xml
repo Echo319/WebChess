@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="Project cleaning. Moved Move to game package. Removed previous Idea of gameThreads as we are going spring route. &#10;&#10;Wrote current thoughts in README">
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/Services/GameService.java" afterDir="false" />
+    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="Clean up some unused imports added comments on things that dont make sense yet.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/controllers/WebSocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/controllers/WebSocketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +229,23 @@
       <option name="project" value="LOCAL" />
       <updated>1783267997281</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added a map of gameIds to gameStates to allow for concurrent games.">
+      <option name="closed" value="true" />
+      <created>1783268499869</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1783268499869</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Clean up some unused imports added comments on things that dont make sense yet.">
+      <option name="closed" value="true" />
+      <created>1783268690667</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1783268690667</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -245,6 +259,8 @@
     <MESSAGE value="Added socket config" />
     <MESSAGE value="Introduced websocket control &#10;&#10;We send our message to the socket.&#10;The socket then passes the move to GameState&#10;&#10;GameState parses the notation &#10;validates the move &#10;updates the Game&#10;&#10;Respond with a message holding the gamesate in FEN string format" />
     <MESSAGE value="Project cleaning. Moved Move to game package. Removed previous Idea of gameThreads as we are going spring route. &#10;&#10;Wrote current thoughts in README" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project cleaning. Moved Move to game package. Removed previous Idea of gameThreads as we are going spring route. &#10;&#10;Wrote current thoughts in README" />
+    <MESSAGE value="Added a map of gameIds to gameStates to allow for concurrent games." />
+    <MESSAGE value="Clean up some unused imports added comments on things that dont make sense yet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean up some unused imports added comments on things that dont make sense yet." />
   </component>
 </project>

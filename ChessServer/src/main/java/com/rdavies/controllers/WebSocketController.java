@@ -1,9 +1,7 @@
 package com.rdavies.controllers;
 
 import com.rdavies.Services.GameService;
-import com.rdavies.game.Game;
 import com.rdavies.game.GameState;
-import com.rdavies.game.Move;
 import com.rdavies.messages.MoveMessage;
 import com.rdavies.messages.MoveResponse;
 import org.springframework.messaging.handler.annotation.DestinationVariable;

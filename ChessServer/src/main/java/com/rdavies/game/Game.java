@@ -7,6 +7,7 @@ public class Game {
 
     private Piece[][] board = new Piece[8][8];
 
+    // I feel we should have this but dont know what to do with it yet.
     private List<Piece> taken = new ArrayList<>();
 
     public Game() {
@@ -77,9 +78,11 @@ public class Game {
             piece.hasMoved = false;
         }
 
+        // make the move
         board[move.toRank][move.toFile] = piece;
 
-        return false;
+        // maybe we are just void
+        return true;
     }
 
     public String toFenString() {
