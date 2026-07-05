@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="Changed board representation to 2D array. &#10;&#10;I expect this to be easier to walk and validate moves.">
+    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="Converted literal rank and file into X Y coordinates.">
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/exceptions/NoPieceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/test/java/GameStateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/test/resources/anGame.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/move/Coords.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/move/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/move/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/utils/NotationParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/utils/NotationParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/test/java/NotationParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/test/java/NotationParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/test/java/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/test/java/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="25" />
+    <option name="cachedIndexableFilesCount" value="28" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -31,18 +33,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Echo319"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Echo319&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Echo319/WebChess.git",
-    "accountId": "2e4a4f4d-09f6-45f6-b054-abbf11eabc77"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Echo319/WebChess.git&quot;,
+    &quot;accountId&quot;: &quot;2e4a4f4d-09f6-45f6-b054-abbf11eabc77&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -50,34 +52,34 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="3FS8MoLtuatTQznvmEkiIWeDysi" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.GameTest.initGameTest.executor": "Run",
-    "JUnit.NotationParserTest.Castle.executor": "Run",
-    "JUnit.NotationParserTest.complexFileAndRankMove.executor": "Debug",
-    "JUnit.NotationParserTest.executor": "Run",
-    "JUnit.NotationParserTest.knightMove.executor": "Debug",
-    "JUnit.NotationParserTest.notationToCoords.executor": "Run",
-    "JUnit.NotationParserTest.pawnMove.executor": "Run",
-    "JUnit.NotationParserTest.regExTest.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.GameTest.initGameTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotationParserTest.Castle.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotationParserTest.complexFileAndRankMove.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.NotationParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotationParserTest.knightMove.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.NotationParserTest.notationToCoords.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotationParserTest.pawnMove.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NotationParserTest.regExTest.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.NotationParserTest.notationToCoords">
+}</component>
+  <component name="RunManager" selected="JUnit.GameTest.initGameTest">
     <configuration name="GameTest.initGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ChessServer" />
       <option name="PACKAGE_NAME" value="" />
@@ -129,8 +131,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.NotationParserTest.notationToCoords" />
         <item itemvalue="JUnit.GameTest.initGameTest" />
+        <item itemvalue="JUnit.NotationParserTest.notationToCoords" />
         <item itemvalue="JUnit.NotationParserTest" />
         <item itemvalue="JUnit.NotationParserTest.regExTest" />
         <item itemvalue="JUnit.NotationParserTest.knightMove" />
@@ -176,13 +178,31 @@
       <option name="project" value="LOCAL" />
       <updated>1782115526282</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Clean up proj">
+      <option name="closed" value="true" />
+      <created>1782116941447</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1782116941447</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Converted literal rank and file into X Y coordinates.">
+      <option name="closed" value="true" />
+      <created>1782116968471</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1782116968471</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="Basic project structure and implemented an Algebraic Notation parser." />
     <MESSAGE value="Changed board representation to 2D array. &#10;&#10;I expect this to be easier to walk and validate moves." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed board representation to 2D array. &#10;&#10;I expect this to be easier to walk and validate moves." />
+    <MESSAGE value="Clean up proj" />
+    <MESSAGE value="Converted literal rank and file into X Y coordinates." />
+    <option name="LAST_COMMIT_MESSAGE" value="Converted literal rank and file into X Y coordinates." />
   </component>
 </project>
