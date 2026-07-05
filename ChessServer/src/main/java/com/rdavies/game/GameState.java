@@ -1,7 +1,6 @@
 package com.rdavies.game;
 
 import com.rdavies.messages.MoveMessage;
-import com.rdavies.move.Move;
 import com.rdavies.utils.NotationParser;
 
 
@@ -27,9 +26,11 @@ public class GameState {
             return false;
         }
 
-        game.update(pieceToMove, recievedMove);
-        turnPlayer = nextPlayer();
-        return true;
+        if(game.update(pieceToMove, recievedMove)) {
+            turnPlayer = nextPlayer();
+            return true;
+        }
+        return false;
     }
 
     public String getFenString() {

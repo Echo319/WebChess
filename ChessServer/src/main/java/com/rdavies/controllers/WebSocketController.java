@@ -3,7 +3,6 @@ package com.rdavies.controllers;
 import com.rdavies.game.GameState;
 import com.rdavies.messages.MoveMessage;
 import com.rdavies.messages.MoveResponse;
-import com.rdavies.move.Move;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;

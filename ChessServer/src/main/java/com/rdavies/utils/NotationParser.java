@@ -1,7 +1,7 @@
 package com.rdavies.utils;
 
 import com.rdavies.game.PieceType;
-import com.rdavies.move.Move;
+import com.rdavies.game.Move;
 
 import java.util.regex.Pattern;
 

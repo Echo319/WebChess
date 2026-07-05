@@ -1,7 +1,5 @@
 package com.rdavies.game;
 
-import com.rdavies.move.Move;
-
 import java.util.ArrayList;
 import java.util.List;
 

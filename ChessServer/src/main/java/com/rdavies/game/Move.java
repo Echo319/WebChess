@@ -1,6 +1,4 @@
-package com.rdavies.move;
-
-import com.rdavies.game.PieceType;
+package com.rdavies.game;
 
 public class Move {
 

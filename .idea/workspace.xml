@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="Added pawn move validation and game update">
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/configuration/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/controllers/WebSocketController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/messages/MoveResponse.java" afterDir="false" />
+    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="Introduced websocket control &#10;&#10;We send our message to the socket.&#10;The socket then passes the move to GameState&#10;&#10;GameState parses the notation &#10;validates the move &#10;updates the Game&#10;&#10;Respond with a message holding the gamesate in FEN string format">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/controllers/WebSocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/controllers/WebSocketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/messages/MoveMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/messages/MoveMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/test/java/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/test/java/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/move/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/thread/GameThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/utils/NotationParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/utils/NotationParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessServer/src/test/java/NotationParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/test/java/NotationParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +204,31 @@
       <option name="project" value="LOCAL" />
       <updated>1783264403045</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Migrated to Spring Websockets">
+      <option name="closed" value="true" />
+      <created>1783267063381</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1783267063381</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added socket config">
+      <option name="closed" value="true" />
+      <created>1783267076991</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1783267076991</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Introduced websocket control &#10;&#10;We send our message to the socket.&#10;The socket then passes the move to GameState&#10;&#10;GameState parses the notation &#10;validates the move &#10;updates the Game&#10;&#10;Respond with a message holding the gamesate in FEN string format">
+      <option name="closed" value="true" />
+      <created>1783267217791</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1783267217791</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -216,6 +238,9 @@
     <MESSAGE value="Clean up proj" />
     <MESSAGE value="Converted literal rank and file into X Y coordinates." />
     <MESSAGE value="Added pawn move validation and game update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added pawn move validation and game update" />
+    <MESSAGE value="Migrated to Spring Websockets" />
+    <MESSAGE value="Added socket config" />
+    <MESSAGE value="Introduced websocket control &#10;&#10;We send our message to the socket.&#10;The socket then passes the move to GameState&#10;&#10;GameState parses the notation &#10;validates the move &#10;updates the Game&#10;&#10;Respond with a message holding the gamesate in FEN string format" />
+    <option name="LAST_COMMIT_MESSAGE" value="Introduced websocket control &#10;&#10;We send our message to the socket.&#10;The socket then passes the move to GameState&#10;&#10;GameState parses the notation &#10;validates the move &#10;updates the Game&#10;&#10;Respond with a message holding the gamesate in FEN string format" />
   </component>
 </project>
