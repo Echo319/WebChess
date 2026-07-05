@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="Introduced websocket control &#10;&#10;We send our message to the socket.&#10;The socket then passes the move to GameState&#10;&#10;GameState parses the notation &#10;validates the move &#10;updates the Game&#10;&#10;Respond with a message holding the gamesate in FEN string format">
+    <list default="true" id="39f921dc-e9ee-4067-98e6-92685f371eb1" name="Changes" comment="Project cleaning. Moved Move to game package. Removed previous Idea of gameThreads as we are going spring route. &#10;&#10;Wrote current thoughts in README">
+      <change afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/Services/GameService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/controllers/WebSocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/controllers/WebSocketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/move/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/game/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/thread/GameThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/utils/NotationParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/main/java/com/rdavies/utils/NotationParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessServer/src/test/java/NotationParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessServer/src/test/java/NotationParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783267217791</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Project cleaning. Moved Move to game package. Removed previous Idea of gameThreads as we are going spring route. &#10;&#10;Wrote current thoughts in README">
+      <option name="closed" value="true" />
+      <created>1783267997281</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1783267997281</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -241,6 +244,7 @@
     <MESSAGE value="Migrated to Spring Websockets" />
     <MESSAGE value="Added socket config" />
     <MESSAGE value="Introduced websocket control &#10;&#10;We send our message to the socket.&#10;The socket then passes the move to GameState&#10;&#10;GameState parses the notation &#10;validates the move &#10;updates the Game&#10;&#10;Respond with a message holding the gamesate in FEN string format" />
-    <option name="LAST_COMMIT_MESSAGE" value="Introduced websocket control &#10;&#10;We send our message to the socket.&#10;The socket then passes the move to GameState&#10;&#10;GameState parses the notation &#10;validates the move &#10;updates the Game&#10;&#10;Respond with a message holding the gamesate in FEN string format" />
+    <MESSAGE value="Project cleaning. Moved Move to game package. Removed previous Idea of gameThreads as we are going spring route. &#10;&#10;Wrote current thoughts in README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project cleaning. Moved Move to game package. Removed previous Idea of gameThreads as we are going spring route. &#10;&#10;Wrote current thoughts in README" />
   </component>
 </project>

@@ -5,13 +5,14 @@ import com.rdavies.utils.NotationParser;
 
 
 public class GameState {
-        // new
+
+    private final String gameId;
     private final Game game = new Game();
     private final NotationParser parser = new NotationParser();
     private Player turnPlayer = Player.WHITE;
 
-    public GameState() {
-
+    public GameState(String gameId) {
+        this.gameId = gameId;
     }
 
     public boolean handleMove(MoveMessage message) {
